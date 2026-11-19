@@ -10,7 +10,7 @@
 
 ## 演示视频
 
-演示视频见本仓库 Releases 附件，覆盖识车、连续工具调用、低置信度确认与 unknown 拒识。
+[点击观看演示视频（video/car-agent-demo.mp4）](video/car-agent-demo.mp4)，覆盖识车、连续工具调用、低置信度确认与 unknown 拒识。
 
 ## 项目定位
 
