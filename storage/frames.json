@@ -1,0 +1,54 @@
+{
+  "request_id": "2026111822352686E58AB97B759AA596BE",
+  "snapshot_count": 14,
+  "snapshots": [
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/ddb7d76502de4530a4bf57a2858ef651?preview=1&auth_key=1795099083-r0-u0-6281096615c76f80f769dfaeea2b43b1"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/2756b82d44eb43678ba42cf6b9864f40?preview=1&auth_key=1795099083-r0-u0-78051ef8c29a4957136b946680cb4454"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/10365864ddcb4d3b9dcd9de308e27579?preview=1&auth_key=1795099083-r0-u0-63d35ad40dde56ed2c7b1edcbd3cae3c"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/2911ee4f9cc84a939c8e58499ba37c63?preview=1&auth_key=1795099083-r0-u0-2f6bc282050a9b4aee1d455534403bb5"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/573c5ebf75ff4b39aeb40089b2634bc0?preview=1&auth_key=1795099083-r0-u0-023281426361dcb44fb2a246244239a2"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/e78389c44c2f49bf9624935ec94a9668?preview=1&auth_key=1795099083-r0-u0-223587951169118bbea41342e9d39fc9"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/5a67a1cb84d84289834f6453ef89124d?preview=1&auth_key=1795099083-r0-u0-3b6513009fe662df7a62338e1022889d"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/b6644cf54f1b4eb99b9f85df64d104ed?preview=1&auth_key=1795099083-r0-u0-7c314431d76468d86914321ba10204a3"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/07e9c829ebe44e73ac1d4a093e24e145?preview=1&auth_key=1795099083-r0-u0-ae9a767ca3d426c14482996d4123b58a"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/2e8f4848834c41698f31f91056e6693c?preview=1&auth_key=1795099083-r0-u0-d8ba80d0562b182f691dfeb2f75bb30d"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/5eb8d4a63cf64f73ac0529e2c7d0a599?preview=1&auth_key=1795099083-r0-u0-d8e2075dabe3a856c2307cd0f4e05e50"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/9ddd5f998bdf4655919edc5f564e9d30?preview=1&auth_key=1795099083-r0-u0-894c4c6cb298acb3f837874999a2f6bb"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/eec20f3eb39c45f8a5a2aa55ddc3dbc8?preview=1&auth_key=1795099083-r0-u0-ec3d87572f202963c4f6f33982ce0ced"
+    },
+    {
+      "image_url": "https://2130825428-amk-2130605177-default-534849.vod.cn-north-1.volcvideo.com/5f4c3b11bc164a17ae867d5af8f7b87f?preview=1&auth_key=1795099083-r0-u0-c4521fdd655b3e419c3f6305c8f0a0af"
+    }
+  ],
+  "status": "completed",
+  "task_id": "amk-tool-extract-frames-2315071683586",
+  "task_type": "extract-frames",
+  "usage": {
+    "normalized_usage": 0.0014
+  }
+}

@@ -1,0 +1,29 @@
+# 识车助手 —— 依赖清单
+# Python 3.11+ 推荐，Windows CPU 环境验证通过
+
+# ========== 深度学习 ==========
+torch>=2.0.0
+torchvision>=0.15.0
+
+# ========== 大模型与智能体 ==========
+openai>=1.0.0          # DeepSeek 使用 OpenAI 兼容接口
+PyYAML>=6.0
+
+# ========== 数据处理 ==========
+numpy>=1.24,<2.0
+pandas>=2.0.0
+Pillow>=10.0.0
+
+# ========== 数据库 ==========
+# SQLite 为 Python 标准库，无需额外安装
+
+# ========== Web 后端 ==========
+fastapi>=0.110.0
+uvicorn>=0.27.0
+python-multipart>=0.0.9
+
+# ========== 工具 ==========
+tqdm>=4.65.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0

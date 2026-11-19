@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>识车助手 · 车型识别与收藏智能体</title>
+  <link rel="stylesheet" href="/static/style.css?v=20261118b" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">识车</span>
+      <div>
+        <h1>识车助手</h1>
+        <p class="subtitle">自训练车型分类模型 + qwen-flash 智能体</p>
+      </div>
+    </div>
+    <div class="status" id="status">正在检查系统状态…</div>
+  </header>
+
+  <main class="layout">
+    <section class="chat-panel">
+      <div class="chat" id="chat"></div>
+      <div class="quick-asks" id="quickAsks">
+        <button type="button" data-q="轻卡有哪些车？举几个例子。">轻卡有哪些</button>
+        <button type="button" data-q="介绍一下大众朗逸。">介绍大众朗逸</button>
+        <button type="button" data-q="把江铃凯运和我收藏里的大众朗逸比一下。">和收藏里的车对比</button>
+      </div>
+      <form class="composer" id="composer">
+        <label class="upload" title="上传车辆图片">
+          <input type="file" id="image" accept="image/*" hidden />
+          <span id="uploadLabel">选择图片</span>
+        </label>
+        <input type="text" id="message" placeholder="问车型、要对比，或发一张车图" autocomplete="off" />
+        <button type="submit" id="send">发送</button>
+      </form>
+      <div class="hint">
+        能识图的是本组 50 类车型；不在目录里的图片会标 unknown，不会硬猜。
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="card garage">
+        <div class="card-head">
+          <h2>车源库 <span class="count" id="favCount">0</span></h2>
+          <span class="tiny">收藏的车都在这儿</span>
+        </div>
+        <div class="fav-filters">
+          <input type="text" id="favFilter" placeholder="搜索车型 / 备注" autocomplete="off" />
+          <select id="favBrand"><option value="">全部品牌</option></select>
+          <select id="favLevel"><option value="">全部级别</option></select>
+        </div>
+        <div id="favorites" class="list"><p class="empty">收藏夹是空的</p></div>
+        <div class="selection-bar">
+          <span id="selectionCount">已选 0 辆</span>
+          <div class="selection-actions">
+            <button type="button" id="compareSelected" class="mini" disabled>对比已选</button>
+            <button type="button" id="clearSelection" class="mini">清空</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>工具调用记录</h2>
+        <div id="toolLog" class="tool-log"><p class="empty">还没有工具调用</p></div>
+      </div>
+
+      <details class="card collapsible">
+        <summary><h2>识别历史</h2></summary>
+        <div id="history" class="list"><p class="empty">还没有识别记录</p></div>
+      </details>
+
+      <details class="card collapsible">
+        <summary><h2>支持识别的 50 类车型 <span class="count" id="classCount">50</span></h2></summary>
+        <input type="text" id="classFilter" placeholder="按品牌/车型筛选" />
+        <div id="classes" class="list classes"></div>
+      </details>
+
+      <details class="card collapsible advanced">
+        <summary><h2>评测工具（教师用）</h2></summary>
+        <div class="row">
+          <button type="button" id="pickFolder" class="ghost">浏览本机文件夹…</button>
+          <button type="button" id="pickBrowserFolder" class="ghost">从浏览器选择文件夹</button>
+        </div>
+        <input type="text" id="folderPath" placeholder="或直接填写文件夹路径, 例如 dataset/test_local" />
+        <div class="row">
+          <label class="field">拒识阈值
+            <input type="number" id="threshold" value="0.6" min="0" max="1" step="0.05" />
+          </label>
+          <span class="tiny">置信度低于该值的预测判为 unknown（0 表示不拒识）</span>
+        </div>
+        <div class="row">
+          <button type="button" id="runBatch">开始测试整个文件夹</button>
+        </div>
+        <div class="hint" id="batchStatus">
+          选中的文件夹里所有图片都会被识别一遍：按类别分子目录存放时给出 51 类 Macro-F1，
+          平铺存放时给出预测分布。测试完成后同时生成 predictions.csv（任务书格式）与
+          EduBench 的 classes.txt、result.csv、result.npz，并重新打包 student_submit.zip。
+          <br>提交教师测试集时阈值用 0.6；如果只是评测本地留出测试集（每类有多张图），把阈值设为 0 分数更高。
+          <br>单次最多 20 万张；图片较多时任务在后台运行并显示进度，期间可以继续用左侧聊天。
+        </div>
+        <div id="batchSummary"></div>
+        <div id="batchResults" class="list"></div>
+        <div class="progress" id="batchProgress" hidden><div class="bar" id="batchBar"></div></div>
+        <input type="file" id="dirInput" webkitdirectory directory multiple hidden />
+      </details>
+    </aside>
+  </main>
+
+  <script src="/static/app.js?v=20261118b"></script>
+</body>
+</html>

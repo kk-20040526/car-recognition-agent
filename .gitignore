@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 数据与模型（体积大，不随仓库分发）
+dataset/
+models/
+.cache/
+runs/
+submission/
+PaddleOCR/
+
+# 本地运行产物
+storage/*.db
+storage/*.db*
+storage/uploads/
+storage/batch/
+storage/review_frames/
+storage/*.log
+*.log
+
+# 密钥与本地配置
+.env
+*.bak_*
+classes.txt.bak_*
+
+# 系统文件
+Thumbs.db
+.DS_Store
