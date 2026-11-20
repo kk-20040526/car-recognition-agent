@@ -4,8 +4,6 @@
 
 识别部分是本项目自训练的 ResNet18 51 类分类模型（50 个目标车型 + unknown 拒识类），业务部分由 qwen-flash 通过 Function Calling 编排 9 个工具完成，后端 FastAPI + SQLite，前端为原生 HTML 页面。
 
-这是一个本地运行的个人项目原型，不是企业级产品，没有真实用户和线上流量。
-
 ![Web 主界面](images/web_ui.png)
 
 ## 演示视频
@@ -145,7 +143,3 @@ python src\evaluate.py --model models\improved\best.pt --split val
 - unknown 仅由 50 个组外来源类别抽样构成，对与目标车型外形接近的其余组外车型仍有误判。
 - 训练在 CPU 上完成，输入尺寸与训练轮数受限；推理约 86 张/秒。
 - 单机单用户本地部署，无用户体系与并发控制。
-
-## 说明
-
-本项目为个人独立完成的项目原型，开发过程使用了 AI 工具辅助。
